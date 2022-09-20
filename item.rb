@@ -2,7 +2,8 @@ require 'date'
 
 # Main super class
 class Item
-  attr_accessor :id, :publish_date, :archived, :author, :source, :genre, :label
+  attr_accessor :publish_date, :author, :source, :genre, :label
+  attr_reader :id, :archived
 
   def initialize(publish_date)
     @id = Random.rand(1..1000)
@@ -15,13 +16,15 @@ class Item
     @genre = 'unknown'
   end
 
+  def move_to_archive
+    return @archived = true if can_be_archived?
+  end
+
+  private
+
   def can_be_archived?
     ten_years_ago = Date.today - 3600
     @publish_date <= ten_years_ago
-  end
-
-  def move_to_archive
-    return @archived = true if can_be_archived?
   end
 end
 
