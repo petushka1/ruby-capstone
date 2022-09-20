@@ -2,12 +2,17 @@ require 'date'
 
 # Main super class
 class Item
-  attr_accessor :id, :publish_date, :archived
+  attr_accessor :id, :publish_date, :archived, :author, :source, :genre, :label
 
   def initialize(publish_date)
     @id = Random.rand(1..1000)
     @publish_date = Date.parse(publish_date)
     @archived = false
+    # 1-to-many relationships
+    @author = 'unknown'
+    @source = 'unknown'
+    @label = 'unknown'
+    @genre = 'unknown'
   end
 
   def can_be_archived?
