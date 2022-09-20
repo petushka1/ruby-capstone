@@ -1,14 +1,14 @@
 require_relative '../item'
 
 class MusicAlbum < Item
-	attr_accessor :on_spotify
-	
-	def initialize(on_spotify:false)
-		@on_spotify = on_spotify
-	end
+  attr_accessor :on_spotify
 
-	def can_be_archived?
-		@on_spotify && super
-	end
-end 
+  def initialize(on_spotify: false)
+    super()
+    @on_spotify = on_spotify
+  end
 
+  def can_be_archived?
+    @on_spotify && super
+  end
+end
