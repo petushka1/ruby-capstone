@@ -12,8 +12,7 @@ describe Genre do
 
   describe '#add_item' do
     before (:each) do 
-      @item= double('Item')
-      allow(@item).to receive(:genre=).with(@item)
+      @item= Item.new('2020-06-06')
     end
 
     it 'should take an instance of the Item class as an input' do 
