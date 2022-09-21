@@ -1,4 +1,4 @@
-require_relative 'book'
+require_relative 'classes/book'
 
 class App
   attr_accessor :books, :games, :music_albums
