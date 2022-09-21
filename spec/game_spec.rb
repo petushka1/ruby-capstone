@@ -15,12 +15,12 @@ describe Game do
   end
 
   describe '#can_be_archived?' do
-    it 'return true if game older than 5 yeras and was played last more than 2 years ago' do
+    it 'return true if published > 10yrs' do
       expect(apex.can_be_archived?).to eq(true)
       expect(fortnite.can_be_archived?).to eq(false)
     end
 
-    it 'returns false if not more than 2 years old' do
+    it 'returns true if > 2yrs' do
       expect(apex.can_be_archived?).to eq(true)
     end
   end
