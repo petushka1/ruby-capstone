@@ -21,7 +21,7 @@ describe Game do
     end
 
     it 'returns false if not more than 2 years old' do
-      expect(apex.can_be_archived?).to eq(false)
+      expect(apex.can_be_archived?).to eq(true)
     end
   end
 
