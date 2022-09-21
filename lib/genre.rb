@@ -8,8 +8,7 @@ class Genre
 	end
 
 	def add_item(item)
-		item.genre = 'test'
-		p item.genre
+		item.genre = item
 		@items << item
 	end
 end

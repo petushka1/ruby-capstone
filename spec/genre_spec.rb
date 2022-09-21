@@ -12,7 +12,8 @@ describe Genre do
 
   describe '#add_item' do
     before (:each) do 
-      @item= double('Item', :genre => "")
+      @item= double('Item')
+      allow(@item).to receive(:genre=).with(@item)
     end
 
     it 'should take an instance of the Item class as an input' do 
