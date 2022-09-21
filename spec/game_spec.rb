@@ -2,7 +2,7 @@ require_relative 'spec_helper'
 
 describe Game do
   let(:apex) { Game.new('2018-03-05', false, '2020-02-02') }
-  let(:fortnite) { Game.new('2018-07-02', true, '2020-02-02') }
+  let(:fortnite) { Game.new('2014-07-02', true, '2020-02-02') }
 
   describe '#game class' do
     it 'should be a game class' do
@@ -17,7 +17,7 @@ describe Game do
   describe '#can_be_archived?' do
     it 'return true if game older than 5 yeras and was played last more than 2 years ago' do
       expect(apex.can_be_archived?).to eq(false)
-      expect(fortnite.can_be_archived?).to eq(false)
+      expect(fortnite.can_be_archived?).to eq(true)
     end
 
     it 'returns false if not more than 2 years old' do
@@ -39,8 +39,8 @@ describe Game do
   end
 
   describe '#publish_date' do
-    it 'return published date' do
-      expect(apex.publish_date).to eql(2018-03-05)
+    it 'returns the publish date' do
+      expect(apex.publish_date).to eql('2018-03-05')
     end
   end
 end
