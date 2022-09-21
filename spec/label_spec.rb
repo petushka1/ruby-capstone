@@ -15,7 +15,10 @@ describe Label do
   context 'check one to many relationship' do
     it 'should push itself to item' do
       @item = Item.new('2022-01-02')
-      expect { @label.add_item(@item) }.to change { @item.label }.from('unknown').to('Label')
+
+      Label.any_instance.stub(id: 435, title: 'NewLabel', color: 'Grayscale')
+      @label.add_item(@item)
+      expect(@item.label).to eq(435)
     end
 
     it 'should push passed item to self items' do

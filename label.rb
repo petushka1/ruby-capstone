@@ -11,6 +11,6 @@ class Label
 
   def add_item(item)
     @items << item
-    item.label = title
+    item.label = id
   end
 end
