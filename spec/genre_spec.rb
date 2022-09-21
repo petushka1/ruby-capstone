@@ -11,24 +11,24 @@ describe Genre do
   end
 
   describe '#add_item' do
-    before (:each) do 
-      @item= Item.new('2020-06-06')
+    before(:each) do
+      @item = Item.new('2020-06-06')
     end
 
-    it 'should take an instance of the Item class as an input' do 
+    it 'should take an instance of the Item class as an input' do
       subject.add_item(@item)
       expect(subject.items[0]).to eql @item
-    end 
+    end
 
-    it 'should add the input item to the collection of items' do 
+    it 'should add the input item to the collection of items' do
       expect(subject.items.length).to eql 0
       subject.add_item(@item)
       expect(subject.items.length).to eql 1
-    end 
+    end
 
-    it 'should add self as a property of the item object' do 
+    it 'should add self as a property of the item object' do
       subject.add_item(@item)
       expect(subject).to eql @item.genre
-    end 
+    end
   end
 end
