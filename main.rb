@@ -1,10 +1,12 @@
 require_relative 'app'
 require_relative 'choice'
 
-def options(_app)
+def options(_app_instance)
   puts 'Choose and option'
   comands = [
     '[1] List all books',
+    '[2] List all labels',
+    '[3] Add new book',
     '[7] Exit'
   ]
 
@@ -15,13 +17,15 @@ end
 
 def main
   app = App.new
+  app.load_state
+
   exit = false
-  puts 'Welcome to Ruby Hell!'
+  puts 'Welcome to Ruby Capstone Project'
   while exit == false
     options(app)
     exit = user_choice(app)
   end
-  puts 'Ruby will find you..'
+  puts 'Thank you!'
 end
 
 main
