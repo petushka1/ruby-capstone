@@ -4,5 +4,5 @@ CREATE TABLE music_albums (
     archived BOOLEAN,
     publish_date DATE NOT NULL,
     genre_id INT, 
-    FOREIGN KEY (genre_id) REFERENCES genre(id)
+    FOREIGN KEY (genre_id) REFERENCES genres(id)
 ); 

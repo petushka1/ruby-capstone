@@ -1,4 +1,4 @@
 CREATE TABLE genres (
     id INT PRIMARY KEY NOT NULL,
-    name varchar,
+    name varchar(250)
 ); 
