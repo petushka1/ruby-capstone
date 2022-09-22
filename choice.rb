@@ -7,6 +7,8 @@ def user_choice(app)
     # something here
   when '3'
     app.add_new_book
+  when '4'
+    app.list_all_music_albums
   when '6'
     app.add_music_album
   when '7'
