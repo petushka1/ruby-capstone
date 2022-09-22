@@ -9,6 +9,8 @@ def user_choice(app)
     app.add_new_book
   when '4'
     app.list_all_music_albums
+  when '5'
+    app.list_all_genres
   when '6'
     app.add_music_album
   when '7'

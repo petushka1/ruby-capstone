@@ -11,6 +11,7 @@ class App
     @books = []
     @games = []
     @music_albums = []
+    @genres = []
   end
 
   def list_all_books
