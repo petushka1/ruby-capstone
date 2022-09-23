@@ -1,11 +1,9 @@
-require_relative 'parser'
 require_relative './lib/music_parser'
 require_relative 'book_parser'
 
 class App
   attr_accessor :books, :games, :music_albums, :genres
 
-  include Parser
   include MusicParser
   include BookParser
 
