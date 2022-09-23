@@ -49,8 +49,9 @@ module BookParser
       read_labels = JSON.parse(file)
   
       read_labels.each do |label|
-        @labels << Label.new(label['title'], label['color'])
-        @labels.last().id = label['id']
+        restored_label = Label.new(label['title'], label['color'])
+        @labels << restored_label
+        restored_label.id = label['id']
       end
     rescue StandardError
       puts 'no labels was saved'
@@ -96,7 +97,8 @@ module BookParser
     title = gets.chomp
     puts 'Add Label color'
     color = gets.chomp
-    @labels << Label.new(title, color)
+    label = Label.new(title, color)
+    @labels << label
     @labels.last()
   end
 
