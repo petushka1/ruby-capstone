@@ -21,6 +21,7 @@ end
 def main
   app = App.new
   app.load_state
+  app.music_from_file(app)
 
   exit = false
   puts 'Welcome to Ruby Capstone Project'

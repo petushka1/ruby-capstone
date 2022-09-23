@@ -1,6 +1,7 @@
 require_relative 'genre'
 require_relative 'music_album'
 require_relative 'music_to_file'
+require_relative 'music_from_file'
 
 module MusicParser
   def add_music_album
@@ -70,6 +71,10 @@ module MusicParser
 
   def music_to_file(app)
     save_music_data(app)
+  end
+
+  def music_from_file(app)
+    get_music_from_file(app)
   end
 
   def get_input(questions = [])

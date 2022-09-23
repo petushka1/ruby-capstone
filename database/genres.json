@@ -1,1 +1,5 @@
-[{"name":"Rock","items":[{"name":"Jake","genre":"Rock","publish_date":"2020-12-12","on_spotify":true,"id":395},{"name":"Bed","genre":"Rock","publish_date":"2020-03-03","on_spotify":false,"id":590}]},{"name":"Jazz","items":[{"name":"Get me home","genre":"Jazz","publish_date":"2020-12-12","on_spotify":false,"id":676}]}]
+[{"name":"Rock","items":
+	[{"name":"Jake","genre":"Rock","publish_date":"2020-12-12","on_spotify":true,"id":395},
+	{"name":"Bed","genre":"Rock","publish_date":"2020-03-03","on_spotify":false,"id":590}]},
+{"name":"Jazz","items":[
+	{"name":"Get me home","genre":"Jazz","publish_date":"2020-12-12","on_spotify":false,"id":676}]}]
