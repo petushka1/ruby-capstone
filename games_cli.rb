@@ -50,12 +50,12 @@ module GamesCli
     author = gets.chomp.to_i
     case author
     when 1
-      author = self.game_with_new_author
+      author = game_with_new_author
       @authors << author.add_item(game)
       @games << game
       save_author
     when 2
-      author = self.game_with_existing_author
+      author = game_with_existing_author
       author.add_item(game)
       @games << game
       save_author

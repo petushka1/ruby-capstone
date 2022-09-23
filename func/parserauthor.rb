@@ -5,6 +5,7 @@ module HandleAuthor
 
   def save_author
     array = []
+    pp @authors
     @authors.each do |author|
       array << {
         author_id: author.id,
@@ -19,11 +20,11 @@ module HandleAuthor
                end
       }
     end
-    write_json(array, '../database/authors.json')
+    write_json(array, './database/authors.json')
   end
 
   def load_author
-    parse_file = read_json('../database/authors.json')
+    parse_file = read_json('./database/authors.json')
     parse_file.each do |author|
       person = Author.new(author['first_name'], author['last_name'])
       @authors << person
