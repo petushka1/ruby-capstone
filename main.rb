@@ -7,6 +7,16 @@ def options(_app_instance)
     '[1] List all books',
     '[2] List all labels',
     '[3] Add new book',
+    '[4] Create Game',
+    '[5] Create Game with new Author',
+    '[6] Create Game with existing Author',
+    '[8] Add Game',
+    '[9] list Game',
+    '[10] List Authors',
+
+
+
+
     '[7] Exit'
   ]
 

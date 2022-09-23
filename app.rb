@@ -1,14 +1,23 @@
 require_relative 'parser'
+require_relative 'games_cli'
+require_relative 'func/parserauthor'
+require_relative 'game'
+require_relative 'author'
 
 class App
-  attr_accessor :books, :games, :music_albums
+  attr_accessor :books, :games, :music_albums, :authors
 
   include Parser
+  include GamesCli
+  include HandleAuthor
 
   def initialize
     @books = []
     @games = []
     @music_albums = []
+    @authors = []
+
+    
   end
 
   def list_all_books

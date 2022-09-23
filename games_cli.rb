@@ -1,4 +1,4 @@
-require_relative '../author'
+require_relative 'author'
 
 module GamesCli
   def create_game
