@@ -17,7 +17,7 @@ class App
     @music_albums = []
     @authors = []
 
-    
+
   end
 
   def list_all_books

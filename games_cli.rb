@@ -1,6 +1,11 @@
 require_relative 'author'
+require_relative 'func/parserauthor'
+
 
 module GamesCli
+
+  include HandleAuthor
+
   def create_game
     puts 'Enter Published date (YYYY-MM-DD): '
     publish_date = gets.chomp
@@ -45,12 +50,12 @@ module GamesCli
     author = gets.chomp.to_i
     case author
     when 1
-      author = game_with_new_author
+      author = self.game_with_new_author
       @authors << author.add_item(game)
       @games << game
       save_author
     when 2
-      author = game_with_existing_author
+      author = self.game_with_existing_author
       author.add_item(game)
       @games << game
       save_author

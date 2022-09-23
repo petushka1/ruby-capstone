@@ -1,9 +1,7 @@
 require_relative 'parsermethod'
-require_relative '../games_cli'
 
 module HandleAuthor
   include ParserMethod
-  include GamesCli
 
   def save_author
     array = []
