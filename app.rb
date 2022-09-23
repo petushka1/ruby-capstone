@@ -1,8 +1,10 @@
+require_relative './lib/music_parser'
 require_relative 'book_parser'
 
 class App
-  attr_accessor :books, :games, :music_albums
+  attr_accessor :books, :games, :music_albums, :genres
 
+  include MusicParser
   include BookParser
 
   def initialize
@@ -10,6 +12,7 @@ class App
     @games = []
     @labels = []
     @music_albums = []
+    @genres = []
   end
 
   def list_all_books

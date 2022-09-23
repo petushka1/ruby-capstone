@@ -8,6 +8,9 @@ def options(_app_instance)
     '[1] List all books',
     '[2] List all labels',
     '[3] Add new book',
+    '[4] List all music albums',
+    '[5] List all genres',
+    '[6] Add new music album',
     '[7] Exit'
   ]
 
@@ -19,6 +22,7 @@ end
 def main
   app = App.new
   app.load_state
+  app.music_from_file(app)
 
   exit = false
   puts 'Welcome to Ruby Capstone Project'

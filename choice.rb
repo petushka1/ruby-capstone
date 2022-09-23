@@ -7,8 +7,15 @@ def user_choice(app)
     app.list_all_labels
   when '3'
     app.add_new_book
+  when '4'
+    app.list_all_music_albums
+  when '5'
+    app.list_all_genres
+  when '6'
+    app.add_music_album
   when '7'
     app.save_state
+    app.music_to_file(app)
     return true
   end
   false
