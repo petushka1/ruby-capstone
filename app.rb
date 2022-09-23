@@ -17,7 +17,6 @@ class App
     @music_albums = []
     @authors = []
 
-    save_author
     load_author
   end
 

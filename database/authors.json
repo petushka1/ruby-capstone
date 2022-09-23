@@ -1,3 +1,31 @@
 [
-
+  {
+    "author_id" : 997,
+    "first_name" : "nico",
+    "last_name" : "cio",
+    "Items" : [
+      {
+        "publish_date" : "1200-12-12",
+        "multiplayer" : true,
+        "last_played_at" : "1300-09-09"
+      },
+      {
+        "publish_date" : "1200-01-09",
+        "multiplayer" : true,
+        "last_played_at" : "1900-09-09"
+      }
+    ]
+  },
+  {
+    "author_id" : 642,
+    "first_name" : "2",
+    "last_name" : "2",
+    "Items" : [
+      {
+        "publish_date" : "1300-09-09",
+        "multiplayer" : true,
+        "last_played_at" : "1900-09-08"
+      }
+    ]
+  }
 ]
