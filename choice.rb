@@ -7,6 +7,12 @@ def user_choice(app)
     app.list_all_labels
   when '3'
     app.add_new_book
+  when '4'
+    app.add_game
+  when '5'
+    app.list_games
+  when '6'
+    app.list_authors
   when '7'
     app.save_state
     return true
