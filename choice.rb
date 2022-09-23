@@ -15,6 +15,7 @@ def user_choice(app)
     app.add_music_album
   when '7'
     app.save_state
+    app.music_to_file(app)
     return true
   end
   false
