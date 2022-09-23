@@ -8,10 +8,13 @@ def options(_app_instance)
     '[1] List all books',
     '[2] List all labels',
     '[3] Add new book',
-    '[4] List all music albums',
-    '[5] List all genres',
-    '[6] Add new music album',
-    '[7] Exit'
+    '[4] Add Game',
+    '[5] list Game',
+    '[6] List Authors',
+    '[7] List all music albums',
+    '[8] List all genres',
+    '[9] Add new music album',
+    '[10] Exit'
   ]
 
   comands.each do |cmd|

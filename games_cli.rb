@@ -1,6 +1,10 @@
-require_relative '../author'
+require_relative 'author'
+require_relative 'game'
+require_relative 'func/parserauthor'
 
 module GamesCli
+  include HandleAuthor
+
   def create_game
     puts 'Enter Published date (YYYY-MM-DD): '
     publish_date = gets.chomp

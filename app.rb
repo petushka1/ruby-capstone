@@ -1,9 +1,15 @@
+require_relative 'games_cli'
+require_relative 'func/parserauthor'
+require_relative 'game'
+require_relative 'author'
 require_relative './lib/music_parser'
 require_relative 'book_parser'
 
 class App
-  attr_accessor :books, :games, :music_albums, :genres
+  attr_accessor :books, :games, :music_albums, :authors, :genres
 
+  include GamesCli
+  include HandleAuthor
   include MusicParser
   include BookParser
 
@@ -12,6 +18,8 @@ class App
     @games = []
     @labels = []
     @music_albums = []
+    @authors = []
+    load_author
     @genres = []
   end
 
