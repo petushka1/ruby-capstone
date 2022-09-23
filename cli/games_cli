@@ -4,7 +4,7 @@ module GamesCli
   def create_game
     puts 'Enter Published date (YYYY-MM-DD): '
     publish_date = gets.chomp
-    
+
     puts 'Multiplayer? (y/n)'
     multiplayer = gets.chomp
     case multiplayer
