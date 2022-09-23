@@ -1,5 +1,5 @@
 require_relative 'parsermethod'
-require_relative '../cli/games_cli'
+require_relative '../games_cli'
 
 module HandleAuthor
   include ParserMethod
