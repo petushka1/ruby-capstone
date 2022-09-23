@@ -24,8 +24,8 @@ module BookParser
 
     read_books.each do |book|
       @books << Book.new(book['publisher'], book['publish_date'], book['cover_state'])
-      @books.last.id = book['id']
-      @books.last.label << @labels.select { |l| l.id == book.label.id }
+      @books.last().id = book['id']
+      @books.last().label << @labels.select { |l| l.id == @books.last().label.id }
     end
   rescue StandardError
     puts 'no books was saved'
@@ -48,7 +48,7 @@ module BookParser
   
       read_labels.each do |label|
         @labels << Label.new(label['title'], label['color'])
-        @labels.last.id = label['id']
+        @labels.last().id = label['id']
       end
     rescue StandardError
       puts 'no labels was saved'
@@ -60,7 +60,7 @@ module BookParser
     label.add_item(book)
     @books << book
     puts "\nNew book added"
-    puts "[NEW] ID: #{@books.last.id}, Publisher: #{@books.last.publisher}, Publish date: #{@books.last.publish_date}, Cover state: #{@books.last.cover_state}"
+    puts "[NEW] ID: #{book.id}, Publisher: #{book.publisher}, Publish date: #{book.publish_date}, Cover state: #{book.cover_state}"
   end
 
   def create_new_book
@@ -95,7 +95,7 @@ module BookParser
     puts 'Add Label color'
     color = gets.chomp
     @labels << Label.new(title, color)
-    @labels.last
+    @labels.last()
   end
 
   def select_label
@@ -114,6 +114,6 @@ module BookParser
 
   def load_state
     read_books_from_file
-    read_books_from_file
+    read_labels_from_file
   end
 end
