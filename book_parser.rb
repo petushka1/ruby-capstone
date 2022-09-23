@@ -5,8 +5,6 @@ require_relative 'label'
 module BookParser # rubocop:disable Metrics
   def books_to_file
     book_obj = @books.map do |book|
-      puts book
-      puts book.label
       {
         publisher: book.publisher,
         publish_date: book.publish_date,

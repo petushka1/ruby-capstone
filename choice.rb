@@ -13,8 +13,15 @@ def user_choice(app)
     app.list_games
   when '6'
     app.list_authors
-  when '7'
+   when '7'
+    app.list_all_music_albums
+  when '8'
+    app.list_all_genres
+  when '9'
+    app.add_music_album
+  when '10'
     app.save_state
+    app.music_to_file(app)
     return true
   end
   false

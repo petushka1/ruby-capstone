@@ -11,7 +11,10 @@ def options(_app_instance)
     '[4] Add Game',
     '[5] list Game',
     '[6] List Authors',
-    '[7] Exit'
+    '[7] List all music albums',
+    '[8] List all genres',
+    '[9] Add new music album',
+    '[10] Exit'
   ]
 
   comands.each do |cmd|
@@ -22,6 +25,7 @@ end
 def main
   app = App.new
   app.load_state
+  app.music_from_file(app)
 
   exit = false
   puts 'Welcome to Ruby Capstone Project'
