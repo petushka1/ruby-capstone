@@ -1,4 +1,4 @@
- require_relative 'parsermethod'
+require_relative 'parsermethod'
 
 module HandleAuthor
   include ParserMethod
@@ -22,7 +22,7 @@ module HandleAuthor
     write_json(array, './database/authors.json')
   end
 
-  def load_author 
+  def load_author
     parse_file = read_json('./database/authors.json')
     parse_file.each do |author|
       person = Author.new(author['first_name'], author['last_name'])

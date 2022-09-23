@@ -1,4 +1,4 @@
-def user_choice(app)
+def user_choice(app) # rubocop:disable Metrics
   choice = gets.chomp
   case choice
   when '1'
@@ -13,7 +13,7 @@ def user_choice(app)
     app.list_games
   when '6'
     app.list_authors
-   when '7'
+  when '7'
     app.list_all_music_albums
   when '8'
     app.list_all_genres
