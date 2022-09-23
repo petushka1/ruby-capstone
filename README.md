@@ -60,6 +60,14 @@ Follow all steps to install [_Ruby_](https://rubyinstaller.org/)
 - GitHub: [@petushka1](https://github.com/petushka1)
 - LinkedIn: [LinkedIn](http://www.linkedin.com/in/nadyalevina)
 
+👤 **Cecilia**
+
+- GitHub: [@c3c1l1a](https://github.com/c3c1l1a)
+
+👤 **Muhammad**
+
+- GitHub: [@ShaheerCH](https://github.com/ShaheerCH)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
