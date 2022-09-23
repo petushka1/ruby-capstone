@@ -23,9 +23,11 @@ module BookParser
     read_books = JSON.parse(file)
 
     read_books.each do |book|
-      @books << Book.new(book['publisher'], book['publish_date'], book['cover_state'])
-      @books.last().id = book['id']
-      @books.last().label << @labels.select { |l| l.id == @books.last().label.id }
+      restored_book = Book.new(book['publisher'], book['publish_date'], book['cover_state'])
+      @books << restored_book
+      restored_book.id = book['id']
+      label = @labels.filter { |label| label.id == restored_book.id }
+      label.add_item(restored_book)
     end
   rescue StandardError
     puts 'no books was saved'
