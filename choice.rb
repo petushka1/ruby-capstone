@@ -4,7 +4,7 @@ def user_choice(app)
   when '1'
     app.list_all_books
   when '2'
-    # something here
+    app.list_all_labels
   when '3'
     app.add_new_book
   when '7'
