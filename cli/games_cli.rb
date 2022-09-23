@@ -73,5 +73,4 @@ module GamesCli
       puts "#{index}) [Author ID]: '#{author.id}', First name: '#{author.first_name}', Last name: '#{author.last_name}'"
     end
   end
-  
 end
