@@ -3,7 +3,7 @@ require_relative 'choice'
 
 def options(_app_instance)
   puts "\n-------------------"
-  puts "Choose and option"
+  puts 'Choose and option'
   comands = [
     '[1] List all books',
     '[2] List all labels',

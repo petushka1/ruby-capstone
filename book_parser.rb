@@ -2,7 +2,8 @@ require 'json'
 require_relative 'book'
 require_relative 'label'
 
-module BookParser
+module BookParser # rubocop:disable Metrics
+
   def books_to_file
     book_obj = @books.map do |book|
       puts book
@@ -21,41 +22,39 @@ module BookParser
   def read_books_from_file
     file = File.read('./database/books.json')
     read_books = JSON.parse(file)
-
     read_books.each do |book|
       restored_book = Book.new(book['publisher'], book['publish_date'], book['cover_state'])
       @books << restored_book
       restored_book.id = book['id']
-      label = @labels.filter { |label| label.id == restored_book.id }
+      label = @labels.find { |l| l.id == book['label_id'] }
       label.add_item(restored_book)
     end
   rescue StandardError
     puts 'no books was saved'
   end
 
-    def labels_to_file
-      labels_obj = @labels.map do |label|
-        {
-          title: label.title,
-          color: label.color,
-          id: label.id,
-        }
-      end
-      File.write('./database/labels.json', labels_obj.to_json)
+  def labels_to_file
+    labels_obj = @labels.map do |label|
+      {
+        title: label.title,
+        color: label.color,
+        id: label.id
+      }
     end
+    File.write('./database/labels.json', labels_obj.to_json)
+  end
 
-    def read_labels_from_file
-      file = File.read('./database/labels.json')
-      read_labels = JSON.parse(file)
-  
-      read_labels.each do |label|
-        restored_label = Label.new(label['title'], label['color'])
-        @labels << restored_label
-        restored_label.id = label['id']
-      end
-    rescue StandardError
-      puts 'no labels was saved'
+  def read_labels_from_file
+    file = File.read('./database/labels.json')
+    read_labels = JSON.parse(file)
+    read_labels.each do |label|
+      restored_label = Label.new(label['title'], label['color'])
+      @labels << restored_label
+      restored_label.id = label['id']
     end
+  rescue StandardError
+    puts 'no labels was saved'
+  end
 
   def add_new_book
     book = create_new_book
@@ -63,7 +62,8 @@ module BookParser
     label.add_item(book)
     @books << book
     puts "\nNew book added"
-    puts "[NEW] ID: #{book.id}, Publisher: #{book.publisher}, Publish date: #{book.publish_date}, Cover state: #{book.cover_state}"
+    print "\n[NEW] ID: #{book.id}, Publisher: #{book.publisher}, Publish date: #{book.publish_date}, "
+    print "Cover state: #{book.cover_state}"
   end
 
   def create_new_book
@@ -99,7 +99,7 @@ module BookParser
     color = gets.chomp
     label = Label.new(title, color)
     @labels << label
-    @labels.last()
+    @labels.last
   end
 
   def select_label
@@ -115,9 +115,8 @@ module BookParser
     books_to_file
     labels_to_file
   end
-
   def load_state
-    read_books_from_file
     read_labels_from_file
+    read_books_from_file
   end
 end
