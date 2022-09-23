@@ -4,7 +4,7 @@ def save_music_albums(music_albums)
   albums = music_albums.map do |album|
     {
       name: album.name,
-      genre: album.genre.name, 
+      genre: album.genre.name,
       publish_date: album.publish_date,
       on_spotify: album.on_spotify,
       id: album.id
@@ -19,7 +19,7 @@ def save_genres(genres)
     items = genre.items.map do |album|
       {
         name: album.name,
-        genre: album.genre.name, 
+        genre: album.genre.name,
         publish_date: album.publish_date,
         on_spotify: album.on_spotify,
         id: album.id
@@ -27,7 +27,7 @@ def save_genres(genres)
     end
     {
       name: genre.name,
-      items: items  
+      items: items
     }
   end
   JSON.dump(genre_map, File.open('./database/genres.json', 'w'))

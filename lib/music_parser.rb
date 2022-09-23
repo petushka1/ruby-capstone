@@ -4,30 +4,34 @@ require_relative 'music_to_file'
 require_relative 'music_from_file'
 
 module MusicParser
+  def add_genre
+    puts "\nWhat genre is it? Choose and option below:"
+    genre = get_input(["[1] Rock\n", "[2] Hip Hop\n", "[3] Jazz\n", "[4] Country\n"])
+
+    case genre
+    when '1'
+      'Rock'
+    when '2'
+      'Hip Hop'
+    when '3'
+      'Jazz'
+    when '4'
+      'Country'
+    else
+      'Unspecified'
+    end
+  end
+
   def add_music_album
     puts "\nTo add a music album, please enter: "
     album_name = get_input(['Name of album?: '])
     published_date = get_input(['Publish date in the format [YYYY-MM-DD]: '])
     on_spotify = get_input(['Is the album on spotify? [Y/n]: '])
-    puts "\nWhat genre is it? Choose and option below:"
-    genre = get_input(["[1] Rock\n", "[2] Hip Hop\n", "[3] Jazz\n", "[4] Country\n"])
-
-    genre = case genre
-            when '1'
-              'Rock'
-            when '2'
-              'Hip Hop'
-            when '3'
-              'Jazz'
-            when '4'
-              'Country'
-            else
-              'Unspecified'
-            end
 
     on_spotify = on_spotify.upcase == 'Y'
     music_album = MusicAlbum.new(published_date, album_name, on_spotify: on_spotify)
 
+    genre = add_genre
     pre_existing_genre = @music_albums.select do |item|
       item.genre.name == genre
     end
