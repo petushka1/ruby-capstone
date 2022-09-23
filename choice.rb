@@ -8,16 +8,10 @@ def user_choice(app)
   when '3'
     app.add_new_book
   when '4'
-    app.create_game
-  when '5'
-    app.game_with_new_author
-  when '6'
-    app.game_with_existing_author
-  when '8'
     app.add_game
-  when '9'
+  when '5'
     app.list_games
-  when '10'
+  when '6'
     app.list_authors
   when '7'
     app.save_state
