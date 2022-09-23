@@ -1,4 +1,3 @@
-# rubocop:disable Metrics/CyclomaticComplexity
 def user_choice(app)
   choice = gets.chomp
   case choice
