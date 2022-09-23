@@ -1,4 +1,4 @@
-require_relative 'parsermethod'
+ require_relative 'parsermethod'
 
 module HandleAuthor
   include ParserMethod
