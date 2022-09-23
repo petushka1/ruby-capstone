@@ -3,7 +3,6 @@ require_relative 'book'
 require_relative 'label'
 
 module BookParser # rubocop:disable Metrics
-
   def books_to_file
     book_obj = @books.map do |book|
       puts book
@@ -108,6 +107,7 @@ module BookParser # rubocop:disable Metrics
     end
     choice = gets.chomp.to_i
     return 'Select Label from the list' unless choice.between?(0, @labels.length - 1)
+
     @labels[choice]
   end
 
@@ -115,6 +115,7 @@ module BookParser # rubocop:disable Metrics
     books_to_file
     labels_to_file
   end
+
   def load_state
     read_labels_from_file
     read_books_from_file
