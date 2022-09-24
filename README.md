@@ -12,6 +12,8 @@ In this project, you will create a console app that will help you to keep a reco
 - List all created and saved items
 - test all classes
 
+## [Video presentation](https://drive.google.com/file/d/1mNlka7lyDPaqgAzLX3ZIhXptmoUMhJav/view?usp=sharing)
+
 ## Clone repo to run the program and decode the message!
 
 ## Built With
